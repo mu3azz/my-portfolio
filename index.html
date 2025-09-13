@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moaaz Naser - Mobile App Developer & Designer</title>
+
+
+
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Theme Preference Script -->
+    <script>
+        // Check for saved theme preference or use system preference
+        const getThemePreference = () => {
+            if (localStorage.getItem('theme')) {
+                return localStorage.getItem('theme');
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        // Apply theme immediately to prevent flash of unstyled content
+        const theme = getThemePreference();
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <a href="#" class="logo" aria-label="Home">Moaaz Ammar</a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+                            <!-- Moon icon for dark mode -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon moon" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <!-- Sun icon for light mode -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon sun" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <button id="mobile-menu-button" class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+                <span class="sr-only">Menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-nav" aria-hidden="true">
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="mobile-theme-toggle-wrapper">
+                        <button id="mobile-theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+                            <span class="theme-label">Theme</span>
+                            <!-- Moon icon for dark mode -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon moon" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <!-- Sun icon for light mode -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon sun" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm Moaaz Ammar</h1>
+                    <p class="subtitle">Mobile App Developer & Designer</p>
+                    <p>
+                        I build modern, responsive, and engaging Android APPs. Welcome to my creative corner of the
+                        internet.
+                    </p>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-image">
+                        <img src="./images/me.JPG" alt="A portrait of Moaaz Naser">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section fade-in-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>Aspiring Android Developer currently participating in the DEPI – Android Development Track.
+                         Seeking an opportunity to contribute to mobile application projects, enhance my development skills,
+                          and apply my knowledge in real-world scenarios. Passionate about creating intuitive and efficient Android
+                           applications that deliver excellent user experiences.
+                    </p>
+                    <p>
+                        Here are a few technologies I've been working with recently:
+                    </p>
+                    <div class="skills-list">
+                        <span>Kotlin</span>
+                        <span>Java</span>
+                        <span>Swing</span>
+                        <span>C++</span>
+                        <span>Assembly (basic)</span>
+                        <span>XML</span>
+                        <span>Jetpack Compose</span>
+                        <span>Java GUI (Swing/AWT)</span>                       
+                        <span>SQL (Oracle)</span>
+                        <span>Git/GitHub</span>           
+                        <span>UI/UX Design</span>
+                    </div>
+                    <div class="cv-download">
+                        <a href="./Moaaz-Naser.pdf" class="cta-button" target="_blank">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section fade-in-section">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+
+                    <!-- Project Card 1 - Java To-Do List Application -->
+                    <div class="project-card">
+                        <img src="./images/image-1.png" alt="Screenshot of Desktop To-Do List Application"
+                            class="project-image">
+                        <div class="project-info">
+                            <h3>To-Do List App</h3>
+                            <p>Manage tasks by adding, completing, and tracking progress. Professional UI design.</p>
+                            <div class="project-links">
+                                <a href="#">Live Demo</a>
+                                <a href="#">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 - To-Do List Login Screen -->
+                    <div class="project-card">
+                        <img src="./images/image-2.png" alt="Login Screen of To-Do List Application"
+                            class="project-image">
+                        <div class="project-info">
+                            <h3> Login System</h3>
+                            <p>User registration screen with responsive design and social login options.</p>
+                            <div class="project-links">
+                                <a href="#">Feature Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 - Task Management Interface -->
+                    <div class="project-card">
+                        <img src="./images/image-3.png" alt="Task Management Interface" class="project-image">
+                        <div class="project-info">
+                            <h3>Desktop To-Do List Application</h3>
+                            <p>This is a desktop application built with Java Swing, demonstrating visual programming
+                                 concepts through an interactive interface. The project features a complete login system and a task management interface,
+                                  highlighting the use of Java Swing components, event handling, and GUI design principles</p>
+                            <div class="project-links">
+                                <a href="#">Feature Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4 - Customizable UI -->
+                    <div class="project-card">
+                        <img src="./images/image-4.png" alt="Customizable UI Interface" class="project-image">
+                        <div class="project-info">
+                            <h3>Cat Gallery AppI</h3>
+                            <p>Displays cat images from TheCatAPI with search, favorites, and endless scrolling.</p>
+                            <div class="project-links">
+                                <a href="#">Feature Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section fade-in-section">
+            <div class="container contact-content">
+                <h2>Get In Touch</h2>
+                <p>
+                    I'm currently open to new opportunities and collaborations. Feel free to contact me.
+                </p>
+                <p class="ccontact-info">
+                    <span>Phone: <a href="tel:+201014833760">01014833760</a></span>
+                </p>
+                <a href="mailto:mo3az3mmar22@gmail.com" class="cta-button">
+                    Say Hello
+                </a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1CMTJxLJLo/?mibextid=wwXIfr" target="_blank"
+                        aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a href="https://x.com/mu3az_1?s=21" target="_blank" aria-label="Twitter/X">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/mo3az_3mmar?igsh=b3p2b3JkcHlhbXo3&utm_source=qr" target="_blank"
+                        aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="http://www.linkedin.com/in/moaaz-ammar-499379298" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 00.1.47V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Moaaz Ammar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="to-top-button" aria-label="Scroll to top of page">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+        </svg>
+        <span class="sr-only">Scroll to top</span>
+    </button>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
